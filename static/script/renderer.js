@@ -13,6 +13,7 @@ export class Renderer {
         container.innerHTML = `
         <form id="loginForm">
             <h2>Login</h2>
+            <div id="error-msg"></div>
             <input type="text" name="credentials" placeholder="Username or Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" value="Login">Login</button>

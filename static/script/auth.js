@@ -33,15 +33,18 @@ export class LoginForm {
                 localStorage.setItem('token', data);
                 window.location.reload();
             } else {
-                this._throwError('Invalid credentials.');
+                this.throwError('Invalid credentials.');
             }
         } catch (error) {
             console.error('Error:', error);
         }
     }
 
-    _throwError(error) {
+    throwError(error) {
         const errorContainer = document.getElementById('error-msg');
+        if (errorContainer){
+            errorContainer.innerHTML = ''
+        }
         const errMsg = document.createElement('p');
         errMsg.textContent = error;
         errorContainer.appendChild(errMsg);
